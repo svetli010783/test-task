@@ -1,0 +1,100 @@
+databaseChangeLog:
+  - changeSet:
+      id: init-tables-08-02-2024
+      context: ddl
+      author: m1xer
+      changes:
+        - createTable:
+            tableName: users
+            columns:
+              - column:
+                  name: id
+                  type: bigint
+                  autoIncrement: true
+                  constraints:
+                    primaryKey: true
+                    primaryKeyName: user_id_pkeн
+                    nullable: false
+              - column:
+                  name: created_at
+                  type: datetime
+                  constraints:
+                    nullable: false
+              - column:
+                  name: deleted_at
+                  type: datetime
+              - column:
+                  name: email
+                  type: varchar(255)
+                  constraints:
+                    nullable: false
+                    unique: true
+              - column:
+                  name: username
+                  type: varchar(255)
+                  constraints:
+                    nullable: false
+                    unique: true
+              - column:
+                  name: name
+                  type: varchar(255)
+        - createTable:
+            tableName: movie
+            columns:
+              - column:
+                  name: id
+                  type: bigint
+                  autoIncrement: true
+                  constraints:
+                    primaryKey: true
+                    primaryKeyName: user_id_pkey
+                    nullable: false
+              - column:
+                  name: created_at
+                  type: datetime
+                  constraints:
+                    nullable: false
+              - column:
+                  name: deleted_at
+                  type: datetime
+              - column:
+                  name: title
+                  type: varchar(255)
+              - column:
+                  name: poster_path
+                  type: varchar(255)
+        - createTable:
+            tableName: user_favorites
+            columns:
+              - column:
+                  name: user_id
+                  type: BIGINT
+                  constraints:
+                    nullable: false
+                    foreignKeyName: fk_user_favorites_user
+                    references: users(id)
+              - column:
+                  name: movie_id
+                  type: BIGINT
+                  constraints:
+                    nullable: false
+                    foreignKeyName: fk_user_favorites_movie
+                    references: movie(id)
+            primaryKey:
+              columnNames:
+                - user_id
+                - movie_id
+        - addDefaultValue:
+            columnName: created_at
+            defaultValueComputed: 'CURRENT_TIMESTAMP'
+            tableName: users
+        -  addNotNullConstraint:
+             columnName: created_at
+             tableName: users
+        - addDefaultValue:
+            columnName: created_at
+            defaultValueComputed: 'CURRENT_TIMESTAMP'
+            tableName: movie
+        -  addNotNullConstraint:
+             columnName: created_at
+             tableName: movie

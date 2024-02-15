@@ -1,0 +1,20 @@
+server:
+  port: 7667
+  address: 127.0.0.1
+  error:
+    include-message: always
+
+spring:
+  datasource:
+    password: ${DATASOURCE_PASSWORD:serhio20}
+    url: ${DATASOURCE_URL:jdbc:postgresql://localhost:5432/test_taskdb}
+    username: ${DATASOURCE_USERNAME:postgres}
+  jpa:
+    show-sql: false
+  liquibase:
+    enabled: true
+    change-log: db.changelog-master.yaml
+
+logging:
+  path: src\main\java\com\test\task\log
+  config: src\main\resources\logback.xml

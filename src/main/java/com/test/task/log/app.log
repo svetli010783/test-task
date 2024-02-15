@@ -1,0 +1,62 @@
+2024-02-15 11:23:43.141 [background-preinit] INFO  o.h.validator.internal.util.Version - HV000001: Hibernate Validator 6.2.3.Final
+2024-02-15 11:23:43.144 [main] INFO  com.test.task.TestTaskApplication - Starting TestTaskApplication using Java 11.0.20.1 on MIXER with PID 19804 (C:\Users\svetl\Documents\test-tasks\test-task\target\classes started by svetl in C:\Users\svetl\Documents\test-tasks\test-task)
+2024-02-15 11:23:43.153 [main] INFO  com.test.task.TestTaskApplication - No active profile set, falling back to 1 default profile: "default"
+2024-02-15 11:23:43.967 [main] INFO  o.s.d.r.c.RepositoryConfigurationDelegate - Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2024-02-15 11:23:44.022 [main] INFO  o.s.d.r.c.RepositoryConfigurationDelegate - Finished Spring Data repository scanning in 45 ms. Found 2 JPA repository interfaces.
+2024-02-15 11:23:44.964 [main] INFO  o.s.b.w.e.tomcat.TomcatWebServer - Tomcat initialized with port(s): 7667 (http)
+2024-02-15 11:23:44.974 [main] INFO  o.a.coyote.http11.Http11NioProtocol - Initializing ProtocolHandler ["http-nio-127.0.0.1-7667"]
+2024-02-15 11:23:44.975 [main] INFO  o.a.catalina.core.StandardService - Starting service [Tomcat]
+2024-02-15 11:23:44.977 [main] INFO  o.a.catalina.core.StandardEngine - Starting Servlet engine: [Apache Tomcat/9.0.64]
+2024-02-15 11:23:45.098 [main] INFO  o.a.c.c.C.[Tomcat].[localhost].[/] - Initializing Spring embedded WebApplicationContext
+2024-02-15 11:23:45.098 [main] INFO  o.s.b.w.s.c.ServletWebServerApplicationContext - Root WebApplicationContext: initialization completed in 1905 ms
+2024-02-15 11:23:45.249 [main] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Starting...
+2024-02-15 11:23:45.479 [main] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Start completed.
+2024-02-15 11:23:45.655 [main] INFO  liquibase.database - Set default schema name to public
+2024-02-15 11:23:45.756 [main] WARN  liquibase.util - Failed to perform a method call for SnakeYaml because the version of SnakeYaml being used is too old. Consider upgrading to a SnakeYaml version equal to or newer than 1.32, by downloading and installing a newer version of Liquibase (which includes a newer version of SnakeYaml). Loading particularly large JSON and YAML documents (like snapshots) in Liquibase may fail if SnakeYaml is not upgraded.
+2024-02-15 11:23:46.039 [main] INFO  liquibase.changelog - Reading from public.databasechangelog
+2024-02-15 11:23:46.084 [main] INFO  liquibase.changelog - Reading from public.databasechangelog
+2024-02-15 11:23:46.092 [main] INFO  liquibase.util - UPDATE SUMMARY
+2024-02-15 11:23:46.093 [main] INFO  liquibase.util - Run:                          0
+2024-02-15 11:23:46.093 [main] INFO  liquibase.util - Previously run:               1
+2024-02-15 11:23:46.094 [main] INFO  liquibase.util - Filtered out:                 0
+2024-02-15 11:23:46.094 [main] INFO  liquibase.util - -------------------------------
+2024-02-15 11:23:46.094 [main] INFO  liquibase.util - Total change sets:            1
+
+2024-02-15 11:23:46.096 [main] INFO  liquibase.util - Update summary generated
+2024-02-15 11:23:46.126 [main] INFO  liquibase.lockservice - Successfully released change log lock
+2024-02-15 11:23:46.127 [main] INFO  liquibase.command - Command execution complete
+2024-02-15 11:23:46.237 [main] INFO  o.h.jpa.internal.util.LogHelper - HHH000204: Processing PersistenceUnitInfo [name: default]
+2024-02-15 11:23:46.312 [main] INFO  org.hibernate.Version - HHH000412: Hibernate ORM core version 5.6.9.Final
+2024-02-15 11:23:46.494 [main] INFO  o.h.annotations.common.Version - HCANN000001: Hibernate Commons Annotations {5.1.2.Final}
+2024-02-15 11:23:46.621 [main] INFO  org.hibernate.dialect.Dialect - HHH000400: Using dialect: org.hibernate.dialect.PostgreSQL10Dialect
+2024-02-15 11:23:47.187 [main] INFO  o.h.e.t.j.p.i.JtaPlatformInitiator - HHH000490: Using JtaPlatform implementation: [org.hibernate.engine.transaction.jta.platform.internal.NoJtaPlatform]
+2024-02-15 11:23:47.194 [main] INFO  o.s.o.j.LocalContainerEntityManagerFactoryBean - Initialized JPA EntityManagerFactory for persistence unit 'default'
+2024-02-15 11:23:47.727 [main] WARN  o.s.b.a.o.j.JpaBaseConfiguration$JpaWebConfiguration - spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2024-02-15 11:23:48.285 [main] INFO  o.a.coyote.http11.Http11NioProtocol - Starting ProtocolHandler ["http-nio-127.0.0.1-7667"]
+2024-02-15 11:23:48.331 [main] INFO  o.s.b.w.e.tomcat.TomcatWebServer - Tomcat started on port(s): 7667 (http) with context path ''
+2024-02-15 11:23:48.684 [main] INFO  com.test.task.TestTaskApplication - Started TestTaskApplication in 5.937 seconds (JVM running for 6.644)
+2024-02-15 11:23:48.986 [scheduling-1] ERROR o.s.s.s.TaskUtils$LoggingErrorHandler - Unexpected error occurred in scheduled task
+java.net.ConnectException: Connection refused: no further information
+	at java.net.http/jdk.internal.net.http.HttpClientImpl.send(HttpClientImpl.java:561)
+	at java.net.http/jdk.internal.net.http.HttpClientFacade.send(HttpClientFacade.java:119)
+	at com.test.task.service.impl.MovieServiceImpl.collectMovies(MovieServiceImpl.java:70)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+	at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:566)
+	at org.springframework.scheduling.support.ScheduledMethodRunnable.run(ScheduledMethodRunnable.java:84)
+	at org.springframework.scheduling.support.DelegatingErrorHandlingRunnable.run(DelegatingErrorHandlingRunnable.java:54)
+	at java.base/java.util.concurrent.Executors$RunnableAdapter.call(Executors.java:515)
+	at java.base/java.util.concurrent.FutureTask.runAndReset(FutureTask.java:305)
+	at java.base/java.util.concurrent.ScheduledThreadPoolExecutor$ScheduledFutureTask.run(ScheduledThreadPoolExecutor.java:305)
+	at java.base/java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1128)
+	at java.base/java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:628)
+	at java.base/java.lang.Thread.run(Thread.java:829)
+Caused by: java.net.ConnectException: Connection refused: no further information
+	at java.base/sun.nio.ch.SocketChannelImpl.checkConnect(Native Method)
+	at java.base/sun.nio.ch.SocketChannelImpl.finishConnect(SocketChannelImpl.java:777)
+	at java.net.http/jdk.internal.net.http.PlainHttpConnection$ConnectEvent.handle(PlainHttpConnection.java:128)
+	at java.net.http/jdk.internal.net.http.HttpClientImpl$SelectorManager.handleEvent(HttpClientImpl.java:957)
+	at java.net.http/jdk.internal.net.http.HttpClientImpl$SelectorManager.lambda$run$3(HttpClientImpl.java:912)
+	at java.base/java.util.ArrayList.forEach(ArrayList.java:1541)
+	at java.net.http/jdk.internal.net.http.HttpClientImpl$SelectorManager.run(HttpClientImpl.java:912)

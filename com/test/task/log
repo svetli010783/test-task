@@ -1,0 +1,65 @@
+18:48:09.392 [main] INFO  TestTaskApplication[logStarting:55] - Starting TestTaskApplication using Java 11.0.20.1 on MIXER with PID 27368 (C:\Users\svetl\Documents\test-tasks\test-task\target\classes started by svetl in C:\Users\svetl\Documents\test-tasks\test-task)
+18:48:09.390 [background-preinit] INFO  Version[<clinit>:21] - HV000001: Hibernate Validator 6.2.3.Final
+18:48:09.394 [main] INFO  TestTaskApplication[logStartupProfileInfo:634] - No active profile set, falling back to 1 default profile: "default"
+18:48:10.196 [main] INFO  RepositoryConfigurationDelegate[registerRepositoriesIn:132] - Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+18:48:10.252 [main] INFO  RepositoryConfigurationDelegate[registerRepositoriesIn:201] - Finished Spring Data repository scanning in 41 ms. Found 2 JPA repository interfaces.
+18:48:11.060 [main] INFO  TomcatWebServer[initialize:108] - Tomcat initialized with port(s): 7667 (http)
+18:48:11.070 [main] INFO  Http11NioProtocol[log:173] - Initializing ProtocolHandler ["http-nio-127.0.0.1-7667"]
+18:48:11.071 [main] INFO  StandardService[log:173] - Starting service [Tomcat]
+18:48:11.071 [main] INFO  StandardEngine[log:173] - Starting Servlet engine: [Apache Tomcat/9.0.64]
+18:48:11.179 [main] INFO  [/][log:173] - Initializing Spring embedded WebApplicationContext
+18:48:11.179 [main] INFO  ServletWebServerApplicationContext[prepareWebApplicationContext:292] - Root WebApplicationContext: initialization completed in 1731 ms
+18:48:11.304 [main] INFO  HikariDataSource[getConnection:110] - HikariPool-1 - Starting...
+18:48:11.503 [main] INFO  HikariDataSource[getConnection:123] - HikariPool-1 - Start completed.
+18:48:11.624 [main] INFO  database[log:37] - Set default schema name to public
+18:48:11.749 [main] WARN  util[log:37] - Failed to perform a method call for SnakeYaml because the version of SnakeYaml being used is too old. Consider upgrading to a SnakeYaml version equal to or newer than 1.32, by downloading and installing a newer version of Liquibase (which includes a newer version of SnakeYaml). Loading particularly large JSON and YAML documents (like snapshots) in Liquibase may fail if SnakeYaml is not upgraded.
+18:48:12.070 [main] INFO  changelog[log:37] - Reading from public.databasechangelog
+18:48:12.126 [main] INFO  changelog[log:37] - Reading from public.databasechangelog
+18:48:12.134 [main] INFO  util[log:37] - UPDATE SUMMARY
+18:48:12.134 [main] INFO  util[log:37] - Run:                          0
+18:48:12.134 [main] INFO  util[log:37] - Previously run:               1
+18:48:12.135 [main] INFO  util[log:37] - Filtered out:                 0
+18:48:12.135 [main] INFO  util[log:37] - -------------------------------
+18:48:12.135 [main] INFO  util[log:37] - Total change sets:            1
+
+18:48:12.136 [main] INFO  util[log:37] - Update summary generated
+18:48:12.164 [main] INFO  lockservice[log:37] - Successfully released change log lock
+18:48:12.166 [main] INFO  command[log:37] - Command execution complete
+18:48:12.253 [main] INFO  LogHelper[logPersistenceUnitInformation:31] - HHH000204: Processing PersistenceUnitInfo [name: default]
+18:48:12.319 [main] INFO  Version[logVersion:44] - HHH000412: Hibernate ORM core version 5.6.9.Final
+18:48:12.493 [main] INFO  Version[<clinit>:56] - HCANN000001: Hibernate Commons Annotations {5.1.2.Final}
+18:48:12.608 [main] INFO  Dialect[<init>:175] - HHH000400: Using dialect: org.hibernate.dialect.PostgreSQL10Dialect
+18:48:13.087 [main] INFO  JtaPlatformInitiator[initiateService:52] - HHH000490: Using JtaPlatform implementation: [org.hibernate.engine.transaction.jta.platform.internal.NoJtaPlatform]
+18:48:13.092 [main] INFO  LocalContainerEntityManagerFactoryBean[buildNativeEntityManagerFactory:437] - Initialized JPA EntityManagerFactory for persistence unit 'default'
+18:48:13.668 [main] WARN  JpaBaseConfiguration$JpaWebConfiguration[openEntityManagerInViewInterceptor:219] - spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+18:48:14.226 [main] INFO  Http11NioProtocol[log:173] - Starting ProtocolHandler ["http-nio-127.0.0.1-7667"]
+18:48:14.274 [main] INFO  TomcatWebServer[start:220] - Tomcat started on port(s): 7667 (http) with context path ''
+18:48:14.614 [main] INFO  TestTaskApplication[logStarted:61] - Started TestTaskApplication in 5.789 seconds (JVM running for 6.212)
+18:48:14.882 [scheduling-1] ERROR TaskUtils$LoggingErrorHandler[handleError:95] - Unexpected error occurred in scheduled task
+java.net.ConnectException: Connection refused: no further information
+	at java.net.http/jdk.internal.net.http.HttpClientImpl.send(HttpClientImpl.java:561)
+	at java.net.http/jdk.internal.net.http.HttpClientFacade.send(HttpClientFacade.java:119)
+	at com.test.task.service.impl.MovieServiceImpl.collectMovies(MovieServiceImpl.java:70)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+	at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:566)
+	at org.springframework.scheduling.support.ScheduledMethodRunnable.run(ScheduledMethodRunnable.java:84)
+	at org.springframework.scheduling.support.DelegatingErrorHandlingRunnable.run(DelegatingErrorHandlingRunnable.java:54)
+	at java.base/java.util.concurrent.Executors$RunnableAdapter.call(Executors.java:515)
+	at java.base/java.util.concurrent.FutureTask.runAndReset(FutureTask.java:305)
+	at java.base/java.util.concurrent.ScheduledThreadPoolExecutor$ScheduledFutureTask.run(ScheduledThreadPoolExecutor.java:305)
+	at java.base/java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1128)
+	at java.base/java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:628)
+	at java.base/java.lang.Thread.run(Thread.java:829)
+Caused by: java.net.ConnectException: Connection refused: no further information
+	at java.base/sun.nio.ch.SocketChannelImpl.checkConnect(Native Method)
+	at java.base/sun.nio.ch.SocketChannelImpl.finishConnect(SocketChannelImpl.java:777)
+	at java.net.http/jdk.internal.net.http.PlainHttpConnection$ConnectEvent.handle(PlainHttpConnection.java:128)
+	at java.net.http/jdk.internal.net.http.HttpClientImpl$SelectorManager.handleEvent(HttpClientImpl.java:957)
+	at java.net.http/jdk.internal.net.http.HttpClientImpl$SelectorManager.lambda$run$3(HttpClientImpl.java:912)
+	at java.base/java.util.ArrayList.forEach(ArrayList.java:1541)
+	at java.net.http/jdk.internal.net.http.HttpClientImpl$SelectorManager.run(HttpClientImpl.java:912)
+18:54:23.543 [SpringApplicationShutdownHook] INFO  LocalContainerEntityManagerFactoryBean[destroy:651] - Closing JPA EntityManagerFactory for persistence unit 'default'
+18:54:23.546 [SpringApplicationShutdownHook] INFO  HikariDataSource[close:350] - HikariPool-1 - Shutdown initiated...
+18:54:23.553 [SpringApplicationShutdownHook] INFO  HikariDataSource[close:352] - HikariPool-1 - Shutdown completed.
